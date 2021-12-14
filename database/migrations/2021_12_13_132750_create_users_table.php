@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('phone');
             $table->string('profile');
             $table->string('password');
+            $table->string('address')->nullable();
             $table->bigInteger('is_verify')->default(0);
             $table->bigInteger('is_admin')->default(0);
             $table->bigInteger('reset_code')->nullable();

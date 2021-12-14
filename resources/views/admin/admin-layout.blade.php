@@ -17,15 +17,6 @@
     <link href="{{ asset('public/admin/css/style.css')}}" rel="stylesheet">
 </head>
 <body>
-    {{-- Pre Loader Start --}}
-    <div id="preloader">
-        <div class="loader">
-            <svg class="circular" viewBox="25 25 50 50">
-                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
-            </svg>
-        </div>
-    </div>
-    {{-- Pre Loader End --}}
     {{-- Wrapper Start --}}
     <div id="main-wrapper">
         {{-- Header Start --}}
@@ -48,9 +39,9 @@
     <script src="{{ asset('public/admin/js/gleek.js')}}"></script>
     <script src="{{ asset('public/admin/js/styleSwitcher.js')}}"></script>
     <!-- Chartjs -->
-    <script src="./plugins/chart.js/Chart.bundle.min.js')}}"></script>
+    <script src="{{ asset('public/admin/plugins/chart.js/Chart.bundle.min.js')}}"></script>
     <!-- Circle progress -->
-    <script src="./plugins/circle-progress/circle-progress.min.js')}}"></script>
+    <script src="{{ asset('public/admin/plugins/circle-progress/circle-progress.min.js')}}"></script>
     <!-- Datamap -->
     <script src="{{ asset('public/admin/plugins/d3v3/index.js')}}"></script>
     <script src="{{ asset('public/admin/plugins/topojson/topojson.min.js')}}"></script>

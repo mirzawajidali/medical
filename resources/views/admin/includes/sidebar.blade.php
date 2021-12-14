@@ -12,6 +12,15 @@
                     <!-- <li><a href="./index-2.html">Home 2</a></li> -->
                 </ul>
             </li>
+            <li>
+                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <i class="icon-graph menu-icon"></i> <span class="nav-text">Profile</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{ route('profile') }}">Profile</a></li>
+                    <li><a href="./chart-morris.html">Change Password</a></li>
+                </ul>
+            </li>
             <li class="mega-menu mega-menu-sm">
                 <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                     <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Layouts</span>

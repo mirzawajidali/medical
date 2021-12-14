@@ -10,10 +10,14 @@
                             <div class="card-body pt-5">
                                 <a class="text-center" href="index.html"> <h4>Admin</h4></a>
                                 @if (Session::has('success'))
-                                    <div class="alert alert-success">{{ Session::get('success') }}</div>
+                                <div class="alert alert-success alert-dismissible fade show">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+                                    </button>{{ Session::get('success') }}</div>
                                 @endif
                                 @if (Session::has('error'))
-                                    <div class="alert alert-danger">{{ Session::get('error') }}</div>
+                                <div class="alert alert-danger alert-dismissible fade show">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+                                    </button>{{ Session::get('error') }}</div>
                                 @endif
                                 <form action="{{ route('login') }}" method="POST" class="mt-5 mb-5 login-input">
                                     @csrf
