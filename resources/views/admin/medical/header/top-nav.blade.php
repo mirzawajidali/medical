@@ -5,7 +5,7 @@
         <div class="row page-titles mx-0">
             <div class="col p-md-0">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Top Nav</a></li>
                     <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
                 </ol>
             </div>
@@ -16,7 +16,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Profile</h4>
+                            <h4 class="card-title">Top Nav</h4>
                             @if (Session::has('success'))
                             <div class="alert alert-success alert-dismissible fade show">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
@@ -27,51 +27,59 @@
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
                                 </button>{{ Session::get('error') }}</div>
                             @endif
-                            <a href="{{ route('change_password') }}" class="btn btn-primary float-right">Change Password</a>
                             <div class="basic-form">
-                                <form action="{{ route('profile') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('top_nav_updated') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
-                                    <div class="media align-items-center mb-4">
-                                        <img class="mr-3 img-fluid rounded-circle" src="{{ asset($users->profile)}}" width="80" height="80" alt="">
-                                        <div class="media-body">
-                                            <h3 class="mb-0">{{ $users->name }}</h3>
-                                            <p class="text-muted mb-0">{{ $users->address }}</p>
-                                        </div>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend"><span class="input-group-text">Upload</span>
-                                        </div>
-                                        <div class="custom-file">
-                                            <input type="file" name="profile" class="custom-file-input">
-                                            <label class="custom-file-label">Choose file</label>
-                                        </div>
-                                    </div>
+
+                                        <img src="{{ asset($header['logo']) }}" alt="">
+
                                     <div class="form-group">
-                                        <input type="hidden" name="id" value="{{ $users->id }}" class="form-control input-default">
-                                    </div>
-                                    @error('name')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                    <div class="form-group">
-                                        <input type="text" name="name" value="{{ $users->name }}" class="form-control input-default" placeholder="Name">
+                                        <input type="file" name="logo" class="form-control-file">
                                     </div>
                                     @error('email')
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                     <div class="form-group">
-                                        <input type="email" name="email" value="{{ $users->email }}" class="form-control input-default" placeholder="Email">
+                                        <input type="email" value="{{ $header['email'] }}" name="email" value="" class="form-control input-default" placeholder="Email">
                                     </div>
                                     @error('phone')
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                     <div class="form-group">
-                                        <input type="text" name="phone" value="{{ $users->phone }}" class="form-control input-default" placeholder="Phone">
+                                        <input type="text" name="phone" value="{{ $header['phone'] }}" class="form-control input-default" placeholder="Phone">
                                     </div>
-                                    @error('address')
+                                    @error('city')
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                     <div class="form-group">
-                                        <input type="text" name="address" value="{{ $users->address }}" class="form-control input-default" placeholder="Address">
+                                        <select class="form-control" name="city">
+                                            <option selected>{{ $address[0] }}</option>
+                                            @foreach ($cities as $city)
+                                                <option>{{ $city->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    @error('country')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                    <div class="form-group">
+                                        <select class="form-control" name="country">
+                                            <option selected>{{ $address[2] }}</option>
+                                            @foreach ($countries as $country)
+                                                <option>{{ $country->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    @error('state')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                    <div class="form-group">
+                                        <select class="form-control" name="state">
+                                            <option selected>{{ $address[1] }}</option>
+                                            @foreach ($states as $state)
+                                                <option>{{ $state->name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <button type="submit" class="btn mb-1 btn-dark">Update</button>
                                 </form>

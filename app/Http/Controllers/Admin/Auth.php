@@ -38,6 +38,11 @@ class Auth extends Controller
                 return back()->with('error','Your Account is not verified!',3);
                 exit();
                }
+               //Check Is Admin Status
+               if($email['status'] ==0){
+                return back()->with('error','Sorry! You are deactived by Admin',3);
+                exit();
+               }
                //Redirect to Dashboard
                $request->session()->put('loggedUser', $email['id']);
                return redirect('admin/dashboard');

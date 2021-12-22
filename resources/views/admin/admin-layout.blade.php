@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="{{ asset('public/admin/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css')}}">
     <!-- Custom Stylesheet -->
     <link href="{{ asset('public/admin/css/style.css')}}" rel="stylesheet">
+    <!--Datatable-->
+    <link href="{{ asset('public/admin/plugins/tables/css/datatable/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
     {{-- Wrapper Start --}}
@@ -56,6 +60,11 @@
     <script src="{{ asset('public/admin/plugins/chartist/js/chartist.min.js')}}"></script>
     <script src="{{ asset('public/admin/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js')}}"></script>
     <script src="{{ asset('public/admin/js/dashboard/dashboard-1.js')}}"></script>
+    <!--Datatables-->
+    <script src="{{ asset('public/admin/plugins/tables/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ asset('public/admin/plugins/tables/js/datatable/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{ asset('public/admin/plugins/tables/js/datatable-init/datatable-basic.min.js')}}"></script>
+
 </body>
 </html>
 

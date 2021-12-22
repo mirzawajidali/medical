@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('address')->nullable();
             $table->bigInteger('is_verify')->default(0);
             $table->bigInteger('is_admin')->default(0);
+            $table->bigInteger('status')->default(0);
             $table->bigInteger('reset_code')->nullable();
             $table->timestamps();
         });
