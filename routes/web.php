@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\Auth;
 use App\Http\Controllers\Admin\Dashboard;
 use App\Http\Controllers\Admin\HeaderController;
+use App\Http\Controllers\Admin\HeroSection;
 use App\Http\Controllers\Admin\Location;
 use App\Http\Controllers\Admin\Profile;
 use App\Http\Controllers\Admin\UserController;
@@ -41,5 +42,10 @@ Route::prefix('admin')->group(function(){
     //Top Nav
     Route::get('/header/top-nav',[HeaderController::class ,'top_nav'])->name('top_nav')->middleware('authcheck');
     Route::post('/header/top-nav',[HeaderController::class, 'top_nav_updated'])->name('top_nav_updated')->middleware('authcheck');
+
+    //Hero Section
+    Route::get('/home/hero',[HeroSection::class, 'hero'])->name('hero')->middleware('authcheck');
+    Route::post('/home/hero',[HeroSection::class, 'hero_updated'])->name('hero_updated')->middleware('authcheck');
+
 });
 

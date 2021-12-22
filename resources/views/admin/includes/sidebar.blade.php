@@ -48,6 +48,17 @@
                     <li><a href="{{ route('top_nav') }}">Top Nav</a></li>
                 </ul>
             </li>
+            <li>
+                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <i class="fas fa-folder"></i> <span class="nav-text">Home</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{ route('hero') }}">Hero Section</a></li>
+                    <li><a href="{{ route('hero') }}">Timing Schedule</a></li>
+
+                </ul>
+            </li>
+
         </ul>
     </div>
 </div>
