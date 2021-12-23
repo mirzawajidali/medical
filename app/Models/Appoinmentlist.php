@@ -5,10 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Appoinment extends Model
+class Appoinmentlist extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'upper_heading', 'main_heading', 'lower_heading', 'btn'
-    ];
 }

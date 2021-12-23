@@ -15,6 +15,11 @@ class CreateAppoinmentsTable extends Migration
     {
         Schema::create('appoinments', function (Blueprint $table) {
             $table->id();
+            $table->string('main_heading')->nullable();
+            $table->string('upper_heading')->nullable();
+            $table->string('lower_heading')->nullable();
+            $table->string('paragraph')->nullable();
+            $table->string('btn')->nullable();
             $table->timestamps();
         });
     }

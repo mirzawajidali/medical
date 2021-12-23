@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AppoinmentController;
 use App\Http\Controllers\Admin\Auth;
 use App\Http\Controllers\Admin\Dashboard;
 use App\Http\Controllers\Admin\HeaderController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\Admin\HeroSection;
 use App\Http\Controllers\Admin\Location;
 use App\Http\Controllers\Admin\Profile;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Medical\AppoinmentPage;
 use App\Http\Controllers\Medical\Home;
 use Illuminate\Support\Facades\Route;
 
@@ -48,9 +50,16 @@ Route::prefix('admin')->group(function(){
     Route::get('/home/hero',[HeroSection::class, 'hero'])->name('hero')->middleware('authcheck');
     Route::post('/home/hero',[HeroSection::class, 'hero_updated'])->name('hero_updated')->middleware('authcheck');
 
+    //Appoinment
+    Route::get('/appoinment',[AppoinmentController::class,'appoinment'])->name('appoinment')->middleware('authcheck');
+    Route::post('/appoinment',[AppoinmentController::class,'appoinment_update'])->name('appoinmentpage_update')->middleware('authcheck');
+
 });
 
 
 //Website Routes
 Route::get('/',[Home::class, 'home'])->name('home');
+Route::get('/appoinment',[AppoinmentPage::class, 'appoinment'])->name('appoinment');
+
+
 

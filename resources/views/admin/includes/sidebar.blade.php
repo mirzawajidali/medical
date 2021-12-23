@@ -58,6 +58,15 @@
 
                 </ul>
             </li>
+            <li>
+                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <i class="fas fa-folder"></i> <span class="nav-text">Appoinment</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{ route('hero') }}">Appointment Settings</a></li>
+                    <li><a href="{{ route('hero') }}">Appoinment List</a></li>
+                </ul>
+            </li>
 
         </ul>
     </div>

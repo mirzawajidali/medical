@@ -13,7 +13,7 @@
 
     					<p class="mb-4 pr-5">{{ $hero['paragraph'] }}</p>
     					<div class="btn-container ">
-    						<a href="appoinment.html" target="_blank" class="btn btn-main-2 btn-icon btn-round-full">{{ $hero['btn'] }}<i class="icofont-simple-right ml-2  "></i></a>
+    						<a href="{{ route('appoinment') }}" target="_blank" class="btn btn-main-2 btn-icon btn-round-full">{{ $hero['btn'] }}<i class="icofont-simple-right ml-2  "></i></a>
     					</div>
     				</div>
     			</div>
