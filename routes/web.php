@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\HeroSection;
 use App\Http\Controllers\Admin\Location;
 use App\Http\Controllers\Admin\Profile;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Medical\Home;
 use Illuminate\Support\Facades\Route;
 
 //Admin
@@ -48,4 +49,8 @@ Route::prefix('admin')->group(function(){
     Route::post('/home/hero',[HeroSection::class, 'hero_updated'])->name('hero_updated')->middleware('authcheck');
 
 });
+
+
+//Website Routes
+Route::get('/',[Home::class, 'home'])->name('home');
 
